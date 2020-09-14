@@ -4,7 +4,7 @@ import Button from './Button'
 export default function home() {
     return (
         <div>
-            <h1>Homie Page</h1>
+            <h1>Casa Page</h1>
             <Button 
             text="Register"
             onClick={() =>{
