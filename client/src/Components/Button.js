@@ -12,4 +12,13 @@ export default function Button(props) {
     )
 }
 
-const defaultStyle = {}
+const defaultStyle = {
+    backgroundColor: "pink",
+    border: "2px lightgrey solid",
+    color: "white",
+    padding: "15px 32px",
+    "text-align": "center",
+    "text-decoration": "none",
+    display: "inline-block",
+    "font-size": "16px"
+}
