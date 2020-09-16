@@ -9,7 +9,7 @@ const User = require('../../models/User');
 //@path: POST *server*/user/register
 //@desc: handels user registration, will upload a new User document to MongoDB.
 //@access: public 
-router.get(
+router.post(
     '/register', 
     validateUser, 
     async (req, res) => {
