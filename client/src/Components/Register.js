@@ -7,7 +7,7 @@ import {registReq} from "../utils/userRequests"
 
 export default function register() {
     return (
-        <div>
+        <div style={{backgroundColor:"#777",display:"flex",alignItems:"center", justifyContent:"center"}}>
             <h1>Vehicle Registration</h1>
 
             <Form
@@ -16,6 +16,8 @@ export default function register() {
                 inputs={registInputs}
                 submitFunc={registReq}
             />
+            <br/>
+            <br/>
             <Button
             text="Return to Home"
             onClick={()=>{
