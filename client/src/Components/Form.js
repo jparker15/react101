@@ -34,6 +34,7 @@ export default function Form(props) {//inputs=Array, title=String, submitFunc= f
             <Button
                 text="submit"
                 onClick={btnOnClick}
+                
             />
         </div>    
     )
