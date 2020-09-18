@@ -20,5 +20,6 @@ const defaultStyle ={
     color: "grey",
     backgroundColor: "lightblue",
     border: "1px solid white",
-    padding:  "20px"
+    padding:  "10px",
+    display: "flex"
 }
