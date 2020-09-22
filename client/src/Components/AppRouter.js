@@ -3,18 +3,35 @@ import {Route,Switch} from "react-router-dom";
 import Home from './Home';
 import Login from './Login';
 import Register from './Register';
-import useLocalStorage from './useLocalStorage';
+import useTheme from "../hooks/useTheme"
 
 export default function AppRouter() {
 
-    const [name,setName] = useLocalStorage("name", "")
+    const [theme,setTheme] = useTheme(true)
 
     return (
         <div>
+
+            <h1>
+                {theme ? "light mode":"dark mode"}
+            </h1>
+
+            <button 
+                onClick={()=>{
+                    setTheme( prevTheme => {
+                        return !prevTheme
+                    })
+                }}
+            >
+                {!theme ? "Switch to Light":"Switch to Dark"}
+            </button>
+
+
             <Switch>
+               
                 <Route path="/" exact>
                     <Home/>
-                    <input/>
+                    
                 </Route>
 
                 <Route path="/login" exact>
