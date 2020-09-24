@@ -3,7 +3,8 @@ import {Route,Switch} from "react-router-dom";
 import Home from './Home';
 import Login from './Login';
 import Register from './Register';
-import useTheme from "../hooks/useTheme"
+import useTheme from "../hooks/useTheme";
+import Control from "./Control";
 
 export default function AppRouter() {
 
@@ -26,7 +27,7 @@ export default function AppRouter() {
                 {!theme ? "Switch to Light":"Switch to Dark"}
             </button>
 
-
+            <Control/>
             <Switch>
                
                 <Route path="/" exact>
