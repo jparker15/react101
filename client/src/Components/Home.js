@@ -1,10 +1,15 @@
 import React from 'react'
 import Button from './Button'
+import useTheme from "../hooks/useTheme"
 
-export default function home() {
+
+export default function Home() {
     return (
-        <div>
+        <div 
+        
+        >
             <h1>Casa Page</h1>
+            <h5>{useTheme() ? "light":"dark"}</h5>
             <Button 
             text="Register"
             onClick={() =>{
