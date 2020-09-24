@@ -1,6 +1,7 @@
 import React /*,{useState,useEffect}*/ from 'react';
 import {BrowserRouter} from "react-router-dom";
 import AppRouter from "./Components/AppRouter";
+import {ThemeProvider} from "./hooks/ThemeContext"
 
 function App() {
 
@@ -20,7 +21,9 @@ function App() {
     >
       Change Me
     </button> */}
-      <AppRouter/>
+      <ThemeProvider>
+        <AppRouter/>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }
