@@ -1,11 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Button from './Button'
 import Input from './Input'
 
 export default function Form(props) {//inputs=Array, title=String, submitFunc= function
 
+    const initialState = props.inputs.reduce((initial,input)=>{
+        initial[input.name]= ""
+        return initial
+    }, {})
+
+    const [formValues, updateValues] = useState(initialState)
+
     const btnOnClick = () =>{
-        props.submitFunc(document.getElementById(props.id));
+        props.submitFunc(formValues);
     }
 
     return (
@@ -25,7 +32,14 @@ export default function Form(props) {//inputs=Array, title=String, submitFunc= f
                                 type={inProps.type}
                                 style={inProps.style}
                                 id={inProps.id}
-                                onChange={inProps.onChange}
+                                onChange={(e) =>{
+
+                                    const newVal = e.target.value
+                                    const inputName = e.target.name
+
+                                    updateValues({...formValues, [inputName]:newVal});
+                                    // console.log(e.target.name,e.target.value);
+                                }}
                             />
                         )
                     }) : "Dev Warning: No Inputs: Check Form Code"
