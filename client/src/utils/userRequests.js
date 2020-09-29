@@ -3,19 +3,20 @@ const baseURL = "http://localhost:3333";
 
 
 module.exports = {
-    loginReq: (form) =>{
+    loginReq: async (values) =>{
         const reqBody = {};
         let missingInput = [];
-
-        for (const input of form){
-            const val = input.value;
+        console.log(values);
+        for (const key in values){
+            // console.log(key);
+            const val = values[key].trim();
 
             if(val !== ""){
-                reqBody[input.name] = val
+                reqBody[key] = val
             }
         
             else{
-                missingInput.push(input.name)
+                missingInput.push({key:key,err:`${key} is required`})
             }
         }
         //front end validation needed:
@@ -33,17 +34,17 @@ module.exports = {
 
         const loginURL = `${baseURL}/user/login`;
 
-        // const reqData ={
-        //     headers:{
-        //         Accept : "application/json",
-        //          "Content-Type":"application/json",
-        //          "Access-Control-Allow-Origin":"*"
-        //     },
-        //     method: "PUT",
-        //     data: JSON.stringify(reqBody)
-        // };
+        const reqData ={
+            headers:{
+                Accept : "application/json",
+                 "Content-Type":"application/json",
+                 "Access-Control-Allow-Origin":"*"
+            },
+            method: "PUT",
+            data: JSON.stringify(reqBody)
+        };
 
-        axios.put(loginURL, reqBody)
+       return await axios.put(loginURL, reqBody)
         .then( res =>{
             console.log("res:",res);
 
@@ -53,7 +54,7 @@ module.exports = {
                 console.log(err);
             }
         })
-        console.log(reqBody)
+        // console.log(reqBody)
     }
     ,
     registReq: (form) =>{
