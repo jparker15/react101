@@ -2,10 +2,10 @@ import React from 'react'
 import Button from './Button'
 import Form from "./Form"
 
-import {loginReq} from "../utils/userRequests"
-import {loginInputs} from "../utils/userInputs"
+import { login } from "../utils/userRequests"
+import { loginInputs } from "../utils/userInputs"
 
-export default function login() {
+export default function Login() {
     return (
         <div>
             <h1>Login</h1>
@@ -14,7 +14,9 @@ export default function login() {
                 id="loginForm"
                 inputs={loginInputs}
                 title="User Login"
-                submitFunc={loginReq}
+                request={login}
+                submitText= "Submit Login"
+                
 
             />
 
