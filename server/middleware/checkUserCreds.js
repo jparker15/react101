@@ -25,7 +25,7 @@ module.exports = async (req, res, next) => {
         query[field] = c;
 
         const
-        projection = {password: 1}, 
+        projection = {password: 1, username: 1}, 
         user = 
             await User.findOne(
                 query, 
