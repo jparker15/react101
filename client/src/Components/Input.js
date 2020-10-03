@@ -6,6 +6,7 @@ export default function Input(props) {
         <input
             //ph, type, onchange, name, id
             id = {props.id}
+            value={props.value}
             name= {props.name}
             type={props.type}
             placeholder={props.placeholder}
