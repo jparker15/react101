@@ -3,9 +3,9 @@ import Button from './Button'
 import Form from './Form'
 
 import {registInputs} from "../utils/userInputs"
-import {registReq} from "../utils/userRequests"
+import {register} from "../utils/userRequests"
 
-export default function register() {
+export default function Register() {
     return (
         <div style={{backgroundColor:"#777",display:"flex",alignItems:"center", justifyContent:"center"}}>
             <h1>Vehicle Registration</h1>
@@ -14,7 +14,7 @@ export default function register() {
                 id="registerForm"
                 title="Register"
                 inputs={registInputs}
-                submitFunc={registReq}
+                submitText="Submit Registeration"
             />
             <br/>
             <br/>
